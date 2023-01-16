@@ -1,3 +1,29 @@
+:root {
+  --green: hsl(160deg, 100%, 30%);
+  --gold-lighter: hsl(45deg, 100%, 50%);
+  --gold-darker: hsl(45deg, 100%, 40%);
+  --black: hsl(0deg, 0%, 0%);
+  --var-dark: hsl(0deg, 0%, 10%);
+  --dark: hsl(0deg, 0%, 30%);
+  --medium: hsl(0deg, 0%, 40%);
+  --light: hsl(0deg, 0%, 60%);
+  --white: hsl(0deg, 0%, 100%);
+
+  --primary-spacing: 8px;
+  --primary-spacing-x2: 16px;
+  --primary-spacing-x3: 24px;
+  --primary-spacing-x4: 32px;
+  --primary-spacing-x6: 48px;
+  --primary-spacing-x8: 64px;
+  --primary-spacing-x12: 96px;
+  --primary-spacing-x16: 128px;
+
+  --primary-font-size: 1rem;
+  --primary-font-size-125: 1.25rem;
+  --primary-font-size-150: 1.5rem;
+  --primary-font-size-200: 2rem;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
@@ -7,6 +33,72 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-size: var(--primary-font-size-125);
+}
+
+h2 {
+  margin: 0;
 }
 
 /* Add styles here! */
+p:not(:last-of-type) {
+  margin-bottom: var(--primary-spacing-x2);
+}
+.intro-chunk {
+  padding-top: var(--primary-spacing-x12);
+  padding-bottom: var(--primary-spacing-x8);
+  max-width: 415px;
+}
+
+header strong {
+  color: var(--green);
+}
+
+.max-width-wrapper {
+  max-width: 1280px;
+  padding-left: 264px;
+}
+
+.title {
+  padding-bottom: var(--primary-spacing-x6);
+  font-size: var(--primary-font-size-200);
+}
+
+main {
+  background-color: var(--medium);
+  height: 100%;
+  padding-top: var(--primary-spacing-x8);
+  border-top: var(--primary-spacing) solid var(--light);
+}
+
+.card {
+  background-color: var(--white);
+  padding: var(--primary-spacing) var(--primary-spacing-x3) var(--primary-spacing-x2) var(--primary-spacing-x3);
+  max-width: 752px;
+  border-bottom: var(--primary-spacing) solid var(--light);
+}
+
+.indented-heading {
+  font-size: var(--primary-font-size-150);
+  padding: var(--primary-spacing-x2);
+  background-color: var(--gold-lighter);
+  width: fit-content;
+  border-bottom: var(--primary-spacing) solid var(--gold-darker);
+  margin-left: calc(-1 * var(--primary-spacing-x4));
+}
+
+@media(max-width: 820px) {
+  .max-width-wrapper {
+    padding-left: 0;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: var(--primary-spacing-x3);
+  }
+
+  .intro-chunk {
+    padding-left: var(--primary-spacing-x3);
+  }
+}
